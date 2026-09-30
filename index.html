@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3ee">
+  <title>Daymark — Habit score</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Daymark home"><span class="brand-mark">d</span> daymark</a>
+      <span class="local-note"><span class="lock" aria-hidden="true">●</span> Your data stays on this device</span>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">A kinder way to build consistency</p>
+      <h1>Progress, not perfection.</h1>
+      <p class="lede">Your score reflects how often you show up lately. Recent days matter more, and one missed day never resets your progress.</p>
+    </section>
+
+    <section class="overview" aria-labelledby="overview-title">
+      <div class="overview-heading">
+        <div><p class="eyebrow">Your overview</p><h2 id="overview-title">Your journey</h2></div>
+        <span id="today-label" class="date-label"></span>
+      </div>
+      <div id="habit-list" class="habit-list"></div>
+      <form id="add-form" class="add-form">
+        <label class="sr-only" for="habit-name">New habit name</label>
+        <input id="habit-name" name="name" maxlength="48" placeholder="Add a habit to focus on…" autocomplete="off" required>
+        <button type="submit">＋ <span>Add habit</span></button>
+      </form>
+      <p id="empty-state" class="empty-state" hidden>Start with one small thing you’d like to do more often.</p>
+    </section>
+
+    <section class="how-it-works">
+      <div class="how-icon" aria-hidden="true">↗</div>
+      <div><h2>A score that understands real life</h2><p>Each day has a weight of <code>1 ÷ (1 + days ago)</code>. We divide the weighted days you completed by the total weight of all days since you started, so recent effort counts more while older days still matter.</p></div>
+    </section>
+    <footer>Made for steady progress · Stored locally in this browser</footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
